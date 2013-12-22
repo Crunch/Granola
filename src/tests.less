@@ -1,0 +1,25 @@
+.css-defined-column {
+    // As opposed to traditional <div class="col-xs-6 col-sm-3">
+    .col(3, sm);
+    .col(6, xs);
+    .col(4);
+}
+@xs: ~"(max-width: 480px)";
+@sm: ~"(max-width: 768px)";
+
+.col(@width, @size) when (@size = xs) {
+    @media @xs {
+        width: (10% * @width);
+    }
+}
+.col(@width, @size) when (@size = sm) {
+    @media @sm {
+        width: (12% * @width);
+    }
+}
+.col(@width) {
+    width: (12% * @width);
+}
+
+
+

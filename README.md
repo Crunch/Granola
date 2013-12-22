@@ -1,4 +1,4 @@
 Granola
 =======
 
-A foundation for delicious styling.
+A foundation for delicious styling. 
