@@ -1,7 +1,10 @@
 // Style libraries may implement overrides for base element styles
-@base-color: red;
 #granola {
+    .vars() {
+        @base-color: red;
+    }
     .box() {
+        #granola > .vars();
         border: 1px solid @base-color;
     }
 }

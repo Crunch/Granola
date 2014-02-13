@@ -6,9 +6,18 @@
 @import "@{granola}/styles/basic/basic";
 @import "@{granola}/elements/simple/simple";
 
+// Variable overrides, done LIKE A BOSS
+#granola {
+    .vars() {
+        @base-color: #aaaaaa;
+    }
+}
 // #granola > .start(); // all normal parameters
 #granola > .start(@normalize: false, @all: false, @navigation: true); // only nav
 // #granola > .start(@normalize: false, @navigation: false); // everything minus nav
 
+//.test {
+//    color: @base-color; // make sure variables aren't leaking
+//}
 
 
