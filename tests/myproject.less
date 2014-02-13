@@ -1,9 +1,9 @@
 @granola: "../lib";
 @import "@{granola}/granola";
-//.add-style("basic");
+//.add-style("basic"); -- this is not yet possible, as LESS has a known bug for interpreting variables in other files
 //.add-elements("simple");
 
-@import (reference) "@{granola}/styles/basic/basic";
+@import "@{granola}/styles/basic/basic";
 @import "@{granola}/elements/simple/simple";
 
 
