@@ -3,8 +3,11 @@
 //.add-style("basic"); -- this is not yet possible, as LESS has a known bug for interpreting variables in other files
 //.add-elements("simple");
 
-@import "@{granola}/styles/basic/basic";
-@import "@{granola}/elements/simple/simple";
+@import "@{granola}/styles/basic/basic"; // the verbose way for now
+// Below: you don't have to output elements, 
+// you can just use Granola mixins to sprinkle styles throughout your project.
+// This would give you a set of "starter classes", depending on your .start() settings
+@import "@{granola}/elements/simple/simple"; 
 
 // Variable overrides, done LIKE A BOSS
 #granola {
