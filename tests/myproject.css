@@ -1,6 +1,15 @@
 /* CSS crunched with Crunch - http://crunchapp.net/ */
-/* @import "navigation"; */
+/* #granola > .vars(); */
 nav {
-  float: left;
+  display: block;
   border: 1px solid #aaaaaa;
+}
+nav ul {
+  display: block;
+}
+nav li {
+  float: left;
+}
+nav a {
+  display: block;
 }

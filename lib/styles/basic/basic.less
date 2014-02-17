@@ -3,8 +3,21 @@
     .vars() {
         @base-color: red;
     }
-    .box() {
-        #granola > .vars();
-        border: 1px solid @base-color;
+    .nav {
+        .outer() {
+            #granola > .vars();
+            display: block;
+            border: 1px solid @base-color;
+        }
+        .list() { 
+            display: block;
+        }
+        .list-item() { 
+            float: left;
+        }
+        .list-link() { 
+            display: block;
+        }
     }
+    
 }
