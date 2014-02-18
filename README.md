@@ -73,6 +73,8 @@ For an illustration, let's look at a popular example: Bootstrap.
 ```
 Bootstrap uses a lot of varaibles, so there's a lot of customization possible here. But what if you would like to use Bootstrap on a site that already exists? What if you want to need or use different class names? Bootstrap offers custom "builds", but what if you want to only apply specific "styles" to specific declared elements?
 
+Bootstrap still treats Less like CSS. That is, it requires you to design your markup in a specific way using specific, pre-defined classes.
+
 In an OOLESS library like Granola, art assets and styles are defined with few specifics about what element(s) they will be applied to. Elements are defined separately, in an object-oriented manner. Meaning that Granola is not a UI library. Granola is a definition of an object-oriented Less structure to make styles and element references swappable, and make granular application of styles possible.
 
 What's Possible With Granola
@@ -84,7 +86,7 @@ Say you wanted to use the type of button styles of Bootstrap, but a custom "mapp
 @import "elements/customelements";
 #granola > .start();
 ```
-Say you decided later to instead use "metro-style" buttons on your project, but you'd already created all your markup, so you wanted to keep your custom element names.
+Say you then decided later to instead use "metro-style" buttons on your project, but you'd already created all your markup, so you wanted to keep your custom element names.
 ```
 @import "granola";
 @import "styles/metro";
