@@ -40,7 +40,7 @@ Libraries like Less can be tremendously useful to abstract out these parts. But 
 
 Wait, what?
 ===
-Let me explain. CSS is a mapping system between element references (elements, classes, and ids) and specific styles and art assets. With Less, you can abstract out your styles, but you can **also abstract out your element references**.
+Let me explain. CSS is a direct mapping system between element references (elements, classes, and ids) and specific styles and art assets. You cannot define styles without specifying *what specific elements they apply to*. With Less, you can abstract out your styles, but you can **also abstract out your element references**.
 
 Put another way: you can define your art assets separately from the elements they apply to.
 
@@ -73,7 +73,7 @@ For an illustration, let's look at a popular example: Bootstrap.
 ```
 Bootstrap uses a lot of varaibles, so there's a lot of customization possible here. But what if you would like to use Bootstrap on a site that already exists? What if you want to need or use different class names? Bootstrap offers custom "builds", but what if you want to only apply specific "styles" to specific declared elements?
 
-Bootstrap still treats Less like CSS. That is, it requires you to design your markup in a specific way using specific, pre-defined classes.
+Bootstrap still treats Less like CSS. That is, it is specifying what elements these styles apply to, and requires you to design your markup in a specific way using specific, pre-defined classes. If you've already defined your elements, or your website was already built without Bootstrap, too bad.
 
 In an OOLESS library like Granola, art assets and styles are defined with few specifics about what element(s) they will be applied to. Elements are defined separately, in an object-oriented manner. Meaning that Granola is not a UI library. Granola is a definition of an object-oriented Less structure to make styles and element references swappable, and make granular application of styles possible.
 
