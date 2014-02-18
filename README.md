@@ -139,7 +139,7 @@ No, never mind, all you want is just one single button with that style.
   #granola > .buttons > .primary; // render the styles
 }
 ```
-You know what, though? This round style is really fantastic. Let's put them back on our first project.
+You know what, though? This round style is really fantastic. Let's put them back on our first project. (You're very fickle, aren't you?)
 ```
 @import "granola";
 @import "styles/rounded";
