@@ -1,11 +1,14 @@
 
 #granola { 
-    .navigation() {
-        nav { 
-            #granola > .nav > .outer; 
-            & ul { #granola > .nav > .list; }
-            & li { #granola > .nav > .list-item; }
-            & a { #granola > .nav > .list-link; }
+    .render {
+        .navigation() {
+            nav { 
+                #granola.navigation(); //Import variable scope
+                .outer();
+                & ul { .list(); }
+                & li { .list-item(); }
+                & a { .list-link(); }
+            }
         }
     }
 }

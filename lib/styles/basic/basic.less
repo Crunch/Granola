@@ -3,21 +3,27 @@
     .vars() {
         @base-color: red;
     }
-    .nav {
-        .outer() {
-            #granola > .vars();
+    .navigation() {
+        #granola.vars();
+        .update() {
+            #granola.navigation();
+        }
+        @outer: {
             display: block;
             border: 1px solid @base-color;
-        }
-        .list() { 
+        };
+        .outer() { .update(); @outer(); }
+        @list: { 
             display: block;
-        }
-        .list-item() { 
+        };
+        .list() { .update(); @list(); }
+        @list-item: { 
             float: left;
-        }
-        .list-link() { 
+        };
+        .list-item() { .update(); @list-item(); }
+        @list-link: { 
             display: block;
-        }
+        };
+        .list-link() { .update(); @list-link(); }
     }
-    
 }

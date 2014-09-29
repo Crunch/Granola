@@ -1,8 +1,8 @@
 @granola: "../lib";
 @import "@{granola}/granola";
 
-//#granola > .add-style("basic"); // this is not yet possible, as LESS has a known bug for interpreting variables in other files
-//#granola > .add-elements("simple");
+//#granola.add-style("basic"); // this is not yet possible, as LESS has a known bug for interpreting variables in other files
+//#granola.add-elements("simple");
 
 @import "@{granola}/styles/basic/basic"; // the verbose way for now
 // Below: you don't have to output elements, 
@@ -12,13 +12,29 @@
 
 // Variable overrides, done LIKE A BOSS
 #granola {
+    // Override simple variables
     .vars() {
         @base-color: #aaaaaa;
     }
+    .navigation() {
+        // Override ruleset definitions
+        @list: {
+            change: all;
+            properties: & values;
+        };
+        // Extend ruleset definitions
+        .list() {
+            or: add one;
+        }
+        .list-item() {
+            extend: list-items;
+        }
+    }
 }
+
 // Some different ways to start your project
-// #granola > .start(); // all normal parameters
-#granola > .start(@normalize: false, @all: false, @navigation: true); // only nav
+// #granola.start(); // all normal parameters
+#granola.start(@normalize: false, @all: false, @navigation: true); // only nav
 
 //.test {
 //    color: @base-color; // make sure variables aren't leaking

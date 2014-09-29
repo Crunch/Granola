@@ -1,14 +1,17 @@
 /* CSS crunched with Crunch - http://crunchapp.net/ */
-/* #granola > .vars(); */
+/* #granola.navigation(); */
 nav {
   display: block;
   border: 1px solid #aaaaaa;
 }
 nav ul {
-  display: block;
+  change: all;
+  properties: & values;
+  or: add one;
 }
 nav li {
   float: left;
+  extend: list-items;
 }
 nav a {
   display: block;
