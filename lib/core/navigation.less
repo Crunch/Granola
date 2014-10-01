@@ -1,9 +1,19 @@
 #granola {
     // Implements for .navigation()
-    .nav {
-        .outer() { }
-        .list() { }
-        .list-item() { }
-        .list-link() { }
+    .nav(outer) {
+        #granola.nav();
+        @outer();
+    }
+    .nav(list) {
+        #granola.nav();
+        @list();
+    }
+    .nav(list-item) {
+        #granola.nav();
+        @list-item();
+    }
+    .nav(list-link) {
+        #granola.nav();
+        @list-link();
     }
 }

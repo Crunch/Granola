@@ -2,16 +2,15 @@
 /* #granola.navigation(); */
 nav {
   display: block;
-  border: 1px solid #aaaaaa;
+  border: 8px solid #0000ff;
 }
 nav ul {
   change: all;
   properties: & values;
-  or: add one;
+  or: add-one;
 }
 nav li {
   float: left;
-  extend: list-items;
 }
 nav a {
   display: block;

@@ -1,34 +1,31 @@
 @granola: "../lib";
 @import "@{granola}/granola";
 
-//#granola.add-style("basic"); // this is not yet possible, as LESS has a known bug for interpreting variables in other files
-//#granola.add-elements("simple");
+@import "@{granola}/palette/pleasant";
+@import "@{granola}/ui/basic";
 
-@import "@{granola}/styles/basic/basic"; // the verbose way for now
 // Below: you don't have to output elements, 
 // you can just use Granola mixins to sprinkle styles throughout your project.
 // This would give you a set of "starter classes", depending on your .start() settings
-@import "@{granola}/elements/simple/simple"; 
+@import "@{granola}/elements/simple"; 
 
 // Variable overrides, done LIKE A BOSS
 #granola {
     // Override simple variables
     .vars() {
         @base-color: #aaaaaa;
+        @border-scale: 5.5;
+        @border-base: 3px;
     }
-    .navigation() {
+    .nav() {
         // Override ruleset definitions
         @list: {
             change: all;
             properties: & values;
         };
-        // Extend ruleset definitions
-        .list() {
-            or: add one;
-        }
-        .list-item() {
-            extend: list-items;
-        }
+    }
+    .nav(list) {
+        or: add-one;
     }
 }
 

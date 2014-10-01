@@ -1,6 +1,6 @@
 /* CSS crunched with Crunch - http://crunchapp.net/ */
 .test {
-  transform: scale(1.2), rotate(45deg);
+  foo: cat, cat;
 }
 .css-defined-column {
   width: 48%;
