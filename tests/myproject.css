@@ -1,4 +1,6 @@
 /* CSS crunched with Crunch - http://crunchapp.net/ */
+/* #granola.typography(); */
+/* #granola.layout(); */
 /* #granola.navigation(); */
 nav {
   display: block;
@@ -15,3 +17,16 @@ nav li {
 nav a {
   display: block;
 }
+.g-nav-justify {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.g-nav-justify-item {
+  display: table-cell;
+}
+/* #granola.buttons(); */
+/* #granola.forms(); */
+/* #granola.icons(); */
+/* #granola.tables(); */
+/* #granola.panels(); */

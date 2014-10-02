@@ -6,8 +6,8 @@
 
 // Below: you don't have to output elements, 
 // you can just use Granola mixins to sprinkle styles throughout your project.
-// This would give you a set of "starter classes", depending on your .start() settings
-@import "@{granola}/elements/simple"; 
+// This would give you a set of "starter classes", depending on your .make() settings
+@import "@{granola}/elements/granola";
 
 // Variable overrides, done LIKE A BOSS
 #granola {
@@ -30,11 +30,7 @@
 }
 
 // Some different ways to start your project
-// #granola.start(); // all normal parameters
-#granola.start(@normalize: false, @all: false, @navigation: true); // only nav
-
-//.test {
-//    color: @base-color; // make sure variables aren't leaking
-//}
+#granola.make(@normalize: false); // all normal parameters
+// #granola.make(@normalize: false, @all: false, @navigation: true); // only nav
 
 

@@ -1,0 +1,15 @@
+
+#granola.render { 
+
+    .navigation() {
+        nav { 
+            #granola.nav(outer);
+            & ul { #granola.nav(list); }
+            & li { #granola.nav(list-item); }
+            & a { #granola.nav(list-link); }
+        }
+        .g-nav-justify { #granola.nav(nav-justify); }
+        .g-nav-justify-item { #granola.nav(nav-justify-item); }
+    }
+
+}
