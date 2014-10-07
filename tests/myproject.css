@@ -2,19 +2,19 @@
 /* #granola.typography(); */
 /* #granola.layout(); */
 /* #granola.navigation(); */
-nav {
+.g-nav {
   display: block;
   border: 8px solid #0000ff;
 }
-nav ul {
+.g-nav ul {
   change: all;
   properties: & values;
   or: add-one;
 }
-nav li {
+.g-nav li {
   float: left;
 }
-nav a {
+.g-nav a {
   display: block;
 }
 .g-nav-justify {

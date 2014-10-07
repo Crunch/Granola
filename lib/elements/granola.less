@@ -2,14 +2,13 @@
 #granola.render { 
 
     .navigation() {
-        nav { 
+        .g-nav { 
             #granola.nav(outer);
             & ul { #granola.nav(list); }
             & li { #granola.nav(list-item); }
             & a { #granola.nav(list-link); }
+            &-justify { #granola.nav(nav-justify); }
+            &-justify-item { #granola.nav(nav-justify-item); }
         }
-        .g-nav-justify { #granola.nav(nav-justify); }
-        .g-nav-justify-item { #granola.nav(nav-justify-item); }
     }
-
 }

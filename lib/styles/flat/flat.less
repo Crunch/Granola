@@ -1,0 +1,23 @@
+// Style libraries may implement overrides for base element styles
+#granola {
+    .vars() {
+        @base-color: red;
+    }
+    #nav {
+        .outer() {
+            #granola > .vars();
+            display: block;
+            border: 1px solid @base-color;
+        }
+        .list() { 
+            display: block;
+        }
+        .list-item() { 
+            float: left;
+        }
+        .list-link() { 
+            display: block;
+        }
+    }
+    
+}
