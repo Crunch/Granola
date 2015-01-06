@@ -1,17 +1,1 @@
 /* CSS crunched with Crunch - http://crunchapp.net/ */
-.test {
-  foo: cat, cat;
-}
-.css-defined-column {
-  width: 48%;
-}
-@media (max-width: 768px) {
-  .css-defined-column {
-    width: 36%;
-  }
-}
-@media (max-width: 480px) {
-  .css-defined-column {
-    width: 60%;
-  }
-}
