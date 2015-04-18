@@ -1,5 +1,15 @@
 #granola {
-    .border(@width, @style, @color) {
-        border: ceil(@width*@border-scale+(@border-base - 1)) @style @color;
+    .ui {
+        .border(@width, @style, @color) {
+            border: ceil(@width*@border-scale+(@border-base - 1)) @style @color;
+        }
+    }
+    .sel {
+        // Apply rules to a class selector prefix
+        .prefix(@pre, @rules) {
+            [class^="@{pre}"], [class*=" @{pre}"] {
+                @rules();
+            }
+        }
     }
 }

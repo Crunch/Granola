@@ -1,5 +1,6 @@
-.box {
-  prop: value;
+#granola.render {
+  /* class names should be "generic" layout, like horizontal and vertical */
+  /* TODO: how to deal with responsive? */
 }
 /* #granola.typography(); */
 /* #granola.layout(); */
@@ -26,6 +27,10 @@
 }
 .g-nav-justify-item {
   display: table-cell;
+}
+[class^="btn-"],
+[class*=" btn-"] {
+  display: inline-block;
 }
 /* #granola.buttons(); */
 /* #granola.forms(); */

@@ -1,5 +1,7 @@
 #granola.render { 
 
+/* class names should be "generic" layout, like horizontal and vertical */
+/* TODO: how to deal with responsive? */
     .navigation() {
         .g-nav { 
             #granola.nav(outer);
@@ -9,5 +11,8 @@
             &-justify { #granola.nav(nav-justify); }
             &-justify-item { #granola.nav(nav-justify-item); }
         }
+        #granola.sel.prefix("btn-", {
+            display: inline-block;
+        });
     }
 }

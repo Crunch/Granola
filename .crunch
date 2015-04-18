@@ -15,12 +15,12 @@
 			"compilers": [
 				"less"
 			],
-			"lastCrunch": "Sat Apr 18 2015 12:00:01 GMT-0700 (PDT)",
+			"lastCrunch": "Sat Apr 18 2015 16:08:08 GMT-0700 (PDT)",
 			"sources": [
-				"myproject.less",
 				"../lib/elements/granola.less",
 				"../lib/ui/basic/nav.less",
-				"../lib/core/mixins.less"
+				"../lib/core/mixins.less",
+				"myproject.less"
 			]
 		}
 	}
