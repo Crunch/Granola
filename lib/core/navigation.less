@@ -1,27 +1,28 @@
 #granola {
     // Implements for .navigation()
-    .nav(outer) {
+    .nav(@item) {
         #granola.nav();
-        @outer();
+        @detached: @@item;
+        @detached();
     }
-    .nav(list) {
-        #granola.nav();
-        @list();
-    }
-    .nav(list-item) {
-        #granola.nav();
-        @list-item();
-    }
-    .nav(list-link) {
-        #granola.nav();
-        @list-link();
-    }
-    .nav(nav-justify) {
-        #granola.nav();
-        @nav-justify();
-    }
-    .nav(nav-justify-item) {
-        #granola.nav();
-        @nav-justify-item();
-    }
+    // .nav(list) {
+    //     #granola.nav();
+    //     @list();
+    // }
+    // .nav(list-item) {
+    //     #granola.nav();
+    //     @list-item();
+    // }
+    // .nav(list-link) {
+    //     #granola.nav();
+    //     @list-link();
+    // }
+    // .nav(nav-justify) {
+    //     #granola.nav();
+    //     @nav-justify();
+    // }
+    // .nav(nav-justify-item) {
+    //     #granola.nav();
+    //     @nav-justify-item();
+    // }
 }

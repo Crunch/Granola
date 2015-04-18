@@ -1,13 +1,15 @@
-/* CSS crunched with Crunch - http://crunchapp.net/ */
+.box {
+  prop: value;
+}
 /* #granola.typography(); */
 /* #granola.layout(); */
 /* #granola.navigation(); */
 .g-nav {
   display: block;
-  border: 8px solid #0000ff;
+  border: 8px solid #aaaaaa;
 }
 .g-nav ul {
-  change: all;
+  border: all;
   properties: & values;
   or: add-one;
 }
@@ -30,3 +32,5 @@
 /* #granola.icons(); */
 /* #granola.tables(); */
 /* #granola.panels(); */
+
+/*# sourceMappingURL=myproject.css.map */

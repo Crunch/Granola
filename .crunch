@@ -1,0 +1,27 @@
+{
+	"compilers": {
+		"less": {
+			"compress": false,
+			"ieCompat": false,
+			"strictMath": false,
+			"strictUnits": false,
+			"javascriptEnabled": false,
+			"sourcemap": true
+		}
+	},
+	"files": {
+		"tests/myproject.less": {
+			"output": "myproject.css",
+			"compilers": [
+				"less"
+			],
+			"lastCrunch": "Sat Apr 18 2015 12:00:01 GMT-0700 (PDT)",
+			"sources": [
+				"myproject.less",
+				"../lib/elements/granola.less",
+				"../lib/ui/basic/nav.less",
+				"../lib/core/mixins.less"
+			]
+		}
+	}
+}
