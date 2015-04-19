@@ -1,14 +1,43 @@
 #granola {
+    // Mixins to help with UI rendering
     .ui {
+        // Draw a border based on math!
         .border(@width, @style, @color) {
             border: ceil(@width*@border-scale+(@border-base - 1)) @style @color;
         }
     }
+    // Helper mixins to create selector rules
     .sel {
         // Apply rules to a class selector prefix
         .prefix(@pre, @rules) {
             [class^="@{pre}"], [class*=" @{pre}"] {
                 @rules();
+            }
+        }
+    }
+    // Mixins to help convert a static site into a responsive one
+    .responsive {
+        // Apply to something like static nav to make the items flexible
+        .table(@num-elements: false, @width: 100%) {
+            display: table;
+            width: @width;
+            margin: 0 auto;
+            table-layout: fixed;
+            & > * {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+        .table(@outer-selector, @num-elements: false, @width: 100%) {
+            @{outer-selector} {
+                .table(@num-elements: @num-elements, @width: @width);
+            }
+        }
+        .table(@breakpoint, @outer-selector, @num-elements: false, @width: 100%) {
+            @{outer-selector} {
+                @media only screen and (max-width: @breakpoint) {
+                    .table(@num-elements: @num-elements, @width: @width);
+                }
             }
         }
     }

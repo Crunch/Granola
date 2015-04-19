@@ -10,14 +10,16 @@
 @import "@{granola}/elements/granola";
 
 // Variable overrides, done LIKE A BOSS
-#granola { 
+#granola() { 
     // Override simple variables
     .vars() {
-        @base-color: #aaaaaa;
+        .colors() {
+        }
+        @color-base: #aaaaaa;
         @border-scale: 5.5;
         @border-base: 3px; 
     }
-    .nav() {
+    .nav {
         // Override ruleset definitions
         @list: { 
             border: all;

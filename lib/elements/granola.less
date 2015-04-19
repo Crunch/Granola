@@ -3,15 +3,16 @@
 /* class names should be "generic" layout, like horizontal and vertical */
 /* TODO: how to deal with responsive? */
     .navigation() {
+        #granola();
         .g-nav { 
-            #granola.nav(outer);
-            & ul { #granola.nav(list); }
-            & li { #granola.nav(list-item); }
-            & a { #granola.nav(list-link); }
-            &-justify { #granola.nav(nav-justify); }
-            &-justify-item { #granola.nav(nav-justify-item); }
+            .nav(outer);
+            & ul { .nav(list); }
+            & li { .nav(list-item); }
+            & a { .nav(list-link); }
+            &-justify { .nav(nav-justify); }
+            &-justify-item { .nav(nav-justify-item); }
         }
-        #granola.sel.prefix("btn-", {
+        .sel.prefix("btn-", {
             display: inline-block;
         });
     }
