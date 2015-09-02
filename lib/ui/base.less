@@ -1,0 +1,14 @@
+
+#granola() {
+	// Style libraries may implement overrides for base element styles
+	#vars() {
+		@borders__scale: 1;
+		@borders__base: 1px;
+    	@layout__spacing: 15px;
+    }
+    #ui() {
+		.nav()		{ @import "basic/nav"; }
+		.layout() 	{ @import "basic/layout"; }
+		.type()		{ @import "basic/type"; }
+    }
+}

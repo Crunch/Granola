@@ -1,14 +1,26 @@
+#granola() { .render() { 
 
-@import (reference) "bootstrap/bootstrap";
-.navbar:extend(.navbar all) {}
+    .defaults() {
+    	.img-responsive { 
+    		//.img-responsive();
+    		/* test */
+    	}
+    	
+    }
+    .layout() {
+    	#ui.layout();
+    	
+    	// .container and .container-fluid
+    	.prefix("container", {
+    		@container();
+    	});
+    	.prefix("col-", {
+    		@col-base();
+    	});
+    	
+    }
+    .typography() {
+    	
+    }
 
-#granola() { 
-	.render() { 
-	    .defaults() {
-	    	//.img-responsive { 
-	    		//.img-responsive();
-	    		/* test */
-	    	//}
-	    }
-	}
-}
+}}

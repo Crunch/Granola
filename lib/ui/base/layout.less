@@ -1,0 +1,23 @@
+@table: {
+    display: table;
+    table-layout: fixed;
+};
+@table-cell: {
+    display: table-cell;
+    vertical-align: top;
+};
+@container: {
+	padding-right: @layout__spacing;
+	padding-left: @layout__spacing;
+	margin-right: auto;
+	margin-left: auto;
+	@media (min-width: 700px) {
+		max-width: 750px;
+	}
+};
+@col-base: {
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+};

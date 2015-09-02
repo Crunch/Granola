@@ -3,18 +3,19 @@
     .ui {
         // Draw a border based on math!
         .border(@width, @style, @color) {
-            border: ceil(@width*@border-scale+(@border-base - 1)) @style @color;
+            border: ceil(@width*@borders__scale+(@borders__base - 1)) @style @color;
         }
     }
+    
     // Helper mixins to create selector rules
-    .sel {
+    //.selector {
         // Apply rules to a class selector prefix
         .prefix(@pre, @rules) {
             [class^="@{pre}"], [class*=" @{pre}"] {
                 @rules();
             } 
         }
-    }
+    //}
     // Mixins to help convert a static site into a responsive one
     .responsive {
         // Apply to something like static nav to make the items flexible

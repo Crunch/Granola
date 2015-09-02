@@ -2,30 +2,32 @@
 @import "@{granola}/granola";
 
 //@import "@{granola}/palette/pleasant";
-@import "@{granola}/ui/basic"; 
+@import "@{granola}/ui/basic";
 
 // Below: you don't have to output elements, 
 // you can just use Granola mixins to sprinkle styles throughout your project.
 // This would give you a set of "starter classes", depending on your .make() settings
-@import "@{granola}/elements/bootstrap";
+@import "@{granola}/elements/default";
 
 // Variable overrides, done LIKE A BOSS
 #granola { 
     // Override simple variables
-    .vars {
+    #vars {
         @colors__baseColor: #aaaaaa;
-        @border-scale: 5.5;
-        @border-base: 3px; 
+        @borders__scale: 5.5;
+        @borders__base: 3px; 
     }
-    .nav {
-        // Override ruleset definitions
-        @list: { 
-            border: all;
-            properties: & values; 
-        }; 
-    }
-    .nav(list) {
-        or: add-one; 
+    #ui {
+	    .nav {
+	        // Override ruleset definitions
+	        @nav-list: { 
+	            border: all;
+	            properties: & values; 
+	        }; 
+	    }
+	    .nav(nav-list) {
+	        or: add-one; 
+	    }
     }
 }
 
