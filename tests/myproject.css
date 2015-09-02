@@ -1,31 +1,31 @@
 /* #granola.type(); */
 * + h1,
-* + .h1 {
+* + .\.h1 {
   margin-top: 30px;
 }
 /* #granola.layout(); */
 /* #granola.nav(); */
-.g-nav {
+.\.nav {
   display: block;
   border: 8px solid #aaaaaa;
 }
-.g-nav ul {
+.\.nav ul {
   border: all;
   properties: & values;
   or: add-one;
 }
-.g-nav li {
+.\.nav li {
   float: left;
 }
-.g-nav a {
+.\.nav a {
   display: block;
 }
-.g-nav-justify {
+.\.nav-justify {
   display: table;
   table-layout: fixed;
   width: 100%;
 }
-.g-nav-justify-item {
+.\.nav-justify-item {
   display: table-cell;
 }
 [class^="btn-"],
@@ -37,5 +37,16 @@
 /* #granola.icons(); */
 /* #granola.tables(); */
 /* #granola.panels(); */
+.\.page {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 700px) {
+  .\.page {
+    max-width: 750px;
+  }
+}
 
 /*# sourceMappingURL=myproject.css.map */

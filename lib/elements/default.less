@@ -1,32 +1,37 @@
 #granola() { .render { 
     .nav() {
     	#ui.nav();
-        .g-nav {
+        .@{g}nav {
             #ui.nav(nav-outer);
-            
-            & ul { 
-            	#ui.nav(nav-list);
-            }
-            & li {
-            	#ui.nav(nav-list-item);
-            }
-            & a {
-            	#ui.nav(nav-list-link);
-            }
-            &-justify {
-            	#ui.nav(nav-justify);
-            }
-            &-justify-item {
-            	#ui.nav(nav-justify-item);
-            }
+        }
+        .@{g}nav ul {
+        	#ui.nav(nav-list);
+        }
+        .@{g}nav li {
+        	#ui.nav(nav-list-item);
+        }
+        .@{g}nav a {
+            #ui.nav(nav-list-link);
+        }
+        .@{g}nav-justify {
+        	#ui.nav(nav-justify);
+        }
+        .@{g}nav-justify-item {
+        	#ui.nav(nav-justify-item);
         }
         .prefix("btn-", {
             display: inline-block;
         });
     }
+    .panels() {
+    	#ui.panels();
+    	.@{g}page {
+    		#ui.panels(page);
+    	}
+    }
     .type() {
     	#ui.type();
-    	h1, .h1 {
+    	h1, .@{g}h1 {
     		#ui.type(h1);
     	}
     		
