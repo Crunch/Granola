@@ -1,33 +1,28 @@
 {
-	"compilers": {
-		"less": {
-			"compress": false,
-			"ieCompat": false,
-			"strictMath": false,
-			"strictUnits": false,
-			"javascriptEnabled": false,
-			"sourcemap": true
-		}
-	},
 	"files": {
 		"tests/myproject.less": {
-			"output": "myproject.css",
-			"compilers": [
-				"less"
+			"engines": [
+				{
+					"compiler": "less",
+					"output": "myproject.css",
+					"options": {
+						"compress": false,
+						"ieCompat": false,
+						"strictMath": true,
+						"strictUnits": false,
+						"javascriptEnabled": false,
+						"sourceMap": true,
+						"sourcemap": true
+					}
+				}
 			],
-			"lastCrunch": "Wed Sep 02 2015 10:50:11 GMT-0700 (PDT)",
 			"sources": [
 				"../lib/core/defaults.less",
 				"../lib/core/init.less",
 				"../lib/core/mixins.less",
 				"../lib/core/normalize.css",
-				"../lib/elements/default.less",
-				"../lib/granola.less",
-				"../lib/ui/base.less",
-				"../lib/ui/base/layout.less",
-				"../lib/ui/base/nav.less",
-				"../lib/ui/base/panels.less",
-				"../lib/ui/base/type.less"
+				"../lib/granola.js",
+				"../lib/granola.less"
 			]
 		}
 	}
