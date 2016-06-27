@@ -1,4 +1,7 @@
-@import "../lib/granola";
+@granola: "../lib";
+@import "@{granola}/granola";
+@import "@{granola}/elements/default";
+@import "@{granola}/ui/base";
 
 @set {
     options {
@@ -15,26 +18,22 @@
     	color: #fff;
     }
     borders {
-    	scale: 5.5;
-    	base: 3px;
+    	scale: val(5.5);
+    	base: val(3px);
     }
 }
 
-@granola make;
+@granola start;
 //get('borders.scale');
 .box {
-    color: fadeout(get('colors.baseColor'), 50%);
+    //color: fadeout(get('colors.baseColor'), 50%);
 }
 
-
-
-
-//@import "@{granola}/ui/base";
 
 // Below: you don't have to output elements, 
 // you can just use Granola mixins to sprinkle styles throughout your project.
 // This would give you a set of "starter classes", depending on your .make() settings
-//@import "@{granola}/elements/default";
+
 
 // Variable overrides, done LIKE A BOSS
 #granola { 
@@ -59,7 +58,7 @@
 }
 
 // Some different ways to start your project
-//#granola.make(@defaults: false); // all normal parameters
+#granola.make(@defaults: false); // all normal parameters
 // #granola.make(@defaults: false, @all: false, @nav: true); // only nav
 
 

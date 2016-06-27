@@ -21,8 +21,14 @@
 				"../lib/core/init.less",
 				"../lib/core/mixins.less",
 				"../lib/core/normalize.css",
+				"../lib/elements/default.less",
 				"../lib/granola.js",
-				"../lib/granola.less"
+				"../lib/granola.less",
+				"../lib/ui/base.less",
+				"../lib/ui/base/layout.less",
+				"../lib/ui/base/nav.less",
+				"../lib/ui/base/panels.less",
+				"../lib/ui/base/type.less"
 			]
 		}
 	}
