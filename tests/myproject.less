@@ -1,29 +1,41 @@
 @granola: "../lib";
+@plugin "inline-urls";
 @import "@{granola}/granola";
 @import "@{granola}/elements/default";
 @import "@{granola}/ui/base";
 
-@set {
-    options {
-        ui: default;
-        elements: default;
-        theme: default;
-        
-        sections {
-            all: true;
+& {
+    @plugin "../lib/granola";
+    @set {
+        options {
+            ui: default;
+            elements: default;
+            theme: default;
+            
+            sections {
+                all: true;
+            }
+        }
+        colors {
+        	baseColor: val(#aaaaaa);
+        	color: #fff;
+        }
+        borders {
+        	scale: val(5.5);
+        	base: val(3px);
         }
     }
-    colors {
-    	baseColor: val(#aaaaaa);
-    	color: #fff;
+    
+}
+.test {
+    @plugin "../lib/granola";
+    @define colors {
+        color: #888;
     }
-    borders {
-    	scale: val(5.5);
-    	base: val(3px);
-    }
+    color: get('colors.color');
 }
 
-@granola start;
+//@granola start;
 //get('borders.scale');
 .box {
     //color: fadeout(get('colors.baseColor'), 50%);

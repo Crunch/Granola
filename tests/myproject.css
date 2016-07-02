@@ -1,7 +1,9 @@
 /*test*/
-
+.test {
+  color: #888;
+}
 .box {
-  value: default;
+  value: get('options.elements');
 }
 /* #granola.type(); */
 * + h1,
