@@ -1,0 +1,11 @@
+.body {
+  color: red;
+}
+.body:after {
+  border: 1px solid grey;
+}
+.body:after {
+  border: 1px solid grey;
+}
+
+/*# sourceMappingURL=test.css.map */

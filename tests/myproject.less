@@ -1,34 +1,30 @@
 @granola: "../lib";
-@plugin "inline-urls";
-@import "@{granola}/granola";
-@import "@{granola}/elements/default";
-@import "@{granola}/ui/base";
+//@import "@{granola}/granola";
+//@import "@{granola}/elements/default";
+//@import "@{granola}/ui/base";
 
-& {
-    @plugin "../lib/granola";
-    @set {
-        options {
-            ui: default;
-            elements: default;
-            theme: default;
-            
-            sections {
-                all: true;
-            }
-        }
-        colors {
-        	baseColor: val(#aaaaaa);
-        	color: #fff;
-        }
-        borders {
-        	scale: val(5.5);
-        	base: val(3px);
-        }
+@plugin "../lib/granola";
+@set {
+    options {
+        ui: default;
+        elements: default;
+        theme: default;
     }
-    
+    colors {
+    	dark {
+    	    color: black;
+    	}
+    	light {
+    	    color: white;
+    	}
+    }
 }
+.block when (get('options.theme') = default) {
+    @col: ~"colors.light";
+    color: get('@{col}.color');
+}
+
 .test {
-    @plugin "../lib/granola";
     @define colors {
         color: #888;
     }
@@ -70,7 +66,7 @@
 }
 
 // Some different ways to start your project
-#granola.make(@defaults: false); // all normal parameters
+//#granola.make(@defaults: false); // all normal parameters
 // #granola.make(@defaults: false, @all: false, @nav: true); // only nav
 
 

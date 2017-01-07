@@ -1,58 +1,21 @@
-/*test*/
-.test {
-  color: #888;
-}
-.box {
-  value: get('options.elements');
-}
-/* #granola.type(); */
-* + h1,
-* + ._h1 {
-  margin-top: 15px * 2;
-}
-/* #granola.layout(); */
-/* #granola.nav(); */
-._nav {
-  display: block;
-}
-._nav ul {
-  border: all;
-  properties: & values;
-  or: add-one;
-}
-._nav li {
-  float: left;
-}
-._nav a {
-  display: block;
-}
-._nav-justify {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-}
-._nav-justify-item {
-  display: table-cell;
-}
-[class^="btn-"],
-[class*=" btn-"] {
-  display: inline-block;
-}
-/* #granola.buttons(); */
-/* #granola.forms(); */
-/* #granola.icons(); */
-/* #granola.tables(); */
-/* #granola.panels(); */
-._page {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 700px) {
-  ._page {
-    max-width: 750px;
+@set {
+  options {
+    ui: default;
+    elements: default;
+    theme: default;
   }
+  colors dark {
+    color: black;
+  }
+  colors light {
+    color: white;
+  }
+}
+.test {
+  color: get('colors.color');
+}
+@define colors {
+  color: #888;
 }
 
 /*# sourceMappingURL=myproject.css.map */

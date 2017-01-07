@@ -1,0 +1,1 @@
+{"version":3,"sources":["test.less"],"names":[],"mappings":"AAiBA;EAHE,UAAA;;AAbA,KAAC;EACC,sBAAA;;AAIF,KAAC;EACC,sBAAA","sourcesContent":[".border() {\n  &:after {\n    border: 1px solid grey;\n  }\n}\n.border() {\n  &:after {\n    border: 1px solid grey;\n  }\n}\n.font-red() {\n  color: red;\n}\n.font-red() {\n  color: red;\n}\n\n.body {\n  .border();\n  .font-red();\n}\n"]}
