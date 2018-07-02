@@ -1,40 +1,12 @@
 @granola: "../lib";
-//@import "@{granola}/granola";
+@import "@{granola}/granola";
 //@import "@{granola}/elements/default";
 //@import "@{granola}/ui/base";
 
-@plugin "../lib/granola";
-@set {
-    options {
-        ui: default;
-        elements: default;
-        theme: default;
-    }
-    colors {
-    	dark {
-    	    color: black;
-    	}
-    	light {
-    	    color: white;
-    	}
-    }
-}
-.block when (get('options.theme') = default) {
-    @col: ~"colors.light";
-    color: get('@{col}.color');
-}
-
-.test {
-    @define colors {
-        color: #888;
-    }
-    color: get('colors.color');
-}
-
-//@granola start;
-//get('borders.scale');
-.box {
-    //color: fadeout(get('colors.baseColor'), 50%);
+#g {
+  .config() {
+    @normalize: false;
+  }
 }
 
 
@@ -44,26 +16,26 @@
 
 
 // Variable overrides, done LIKE A BOSS
-#granola { 
-    // Override simple variables
-    #vars {
-        @colors__baseColor: #aaaaaa;
-        @borders__scale: 5.5;
-        @borders__base: 3px; 
-    }
-    #ui {
-	    .nav {
-	        // Override ruleset definitions
-	        @nav-list: { 
-	            border: all;
-	            properties: & values; 
-	        }; 
-	    }
-	    .nav(nav-list) {
-	        or: add-one; 
-	    }
-    }
-}
+// #granola { 
+//     // Override simple variables
+//     #vars {
+//         @colors__baseColor: #aaaaaa;
+//         @borders__scale: 5.5;
+//         @borders__base: 3px; 
+//     }
+//     #ui {
+// 	    .nav {
+// 	        // Override ruleset definitions
+// 	        @nav-list: { 
+// 	            border: all;
+// 	            properties: & values; 
+// 	        }; 
+// 	    }
+// 	    .nav(nav-list) {
+// 	        or: add-one; 
+// 	    }
+//     }
+// }
 
 // Some different ways to start your project
 //#granola.make(@defaults: false); // all normal parameters

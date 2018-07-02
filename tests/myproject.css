@@ -1,21 +1,8 @@
-@set {
-  options {
-    ui: default;
-    elements: default;
-    theme: default;
-  }
-  colors dark {
-    color: black;
-  }
-  colors light {
-    color: white;
-  }
+[class^="button-"] [class*=" button-"] {
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
 }
-.test {
-  color: get('colors.color');
+.button-primary {
+  border-color: blue;
 }
-@define colors {
-  color: #888;
-}
-
-/*# sourceMappingURL=myproject.css.map */

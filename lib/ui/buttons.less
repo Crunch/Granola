@@ -1,0 +1,10 @@
+#g {
+  .button() {
+    display: inline-block;
+    border-width: (1px * #g.borders[@size]);
+    border-style: solid;
+  }
+  .button(@variant) {
+    border-color: #g.colors[@@variant];
+  }
+}

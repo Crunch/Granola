@@ -1,156 +1,26 @@
-#granola() { .render {
+#g {
+  .config() {
+    @ui: default;
+    @selectors: default;
+    @palette: basic;
+    @normalize: false;
+  }
+  .layout() {
+    //
+    @gap: 16px;
+  }
+  .borders() {
+    // multiplier of border-width
+    @size: 1; 
+    // how much to offset border from background color
+    @offset: 0;
+  }
+  .box() {
+    // target width to height ratio for inline boxes
+    @inline-ratio: (16 / 9);
+  }
+}
 
-	.defaults() {
-		@import (less) "normalize.css";
-		
-		*, *:before, *:after {
-		  -webkit-box-sizing: border-box;
-		     -moz-box-sizing: border-box;
-		          box-sizing: border-box;
-		}
-		
-		// Body reset
-
-		html {
-		  font-size: 10px;
-		  -webkit-tap-highlight-color: rgba(0,0,0,0);
-		}
-		
-		// body {
-		//   font-family: @font-family-base;
-		//   font-size: @font-size-base;
-		//   line-height: @line-height-base;
-		//   color: @text-color;
-		//   background-color: @body-bg;
-		// }
-		
-		// Reset fonts for relevant elements
-		input,
-		button,
-		select,
-		textarea {
-		  font-family: inherit;
-		  font-size: inherit;
-		  line-height: inherit;
-		}
-		// Figures
-		//
-		// We reset this here because previously Normalize had no `figure` margins. This
-		// ensures we don't break anyone's use of the element.
-		
-		figure {
-		  margin: 0;
-		}
-		
-		
-		// Images
-		
-		img {
-		  vertical-align: middle;
-		}
-		
-		// Responsive images (ensure images don't scale beyond their parents)
-		.img-responsive {
-		  //.img-responsive();
-		}
-		
-		// Rounded corners
-		// .img-rounded {
-		//   border-radius: @border-radius-large;
-		// }
-		
-		// // Image thumbnails
-		// //
-		// // Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
-		// .img-thumbnail {
-		//   padding: @thumbnail-padding;
-		//   line-height: @line-height-base;
-		//   background-color: @thumbnail-bg;
-		//   border: 1px solid @thumbnail-border;
-		//   border-radius: @thumbnail-border-radius;
-		//   .transition(all .2s ease-in-out);
-		
-		//   // Keep them at most 100% wide
-		//   .img-responsive(inline-block);
-		// }
-		
-		// // Perfect circle
-		// .img-circle {
-		//   border-radius: 50%; // set radius in percents
-		// }
-		/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
-		@media print {
-		  *,
-		  *:before,
-		  *:after {
-		    color: #000 !important;
-		    text-shadow: none !important;
-		    background: transparent !important;
-		    -webkit-box-shadow: none !important;
-		            box-shadow: none !important;
-		  }
-		  a,
-		  a:visited {
-		    text-decoration: underline;
-		  }
-		  a[href]:after {
-		    content: " (" attr(href) ")";
-		  }
-		  abbr[title]:after {
-		    content: " (" attr(title) ")";
-		  }
-		  a[href^="#"]:after,
-		  a[href^="javascript:"]:after {
-		    content: "";
-		  }
-		  pre,
-		  blockquote {
-		    border: 1px solid #999;
-		
-		    page-break-inside: avoid;
-		  }
-		  thead {
-		    display: table-header-group;
-		  }
-		  tr,
-		  img {
-		    page-break-inside: avoid;
-		  }
-		  img {
-		    max-width: 100% !important;
-		  }
-		  p,
-		  h2,
-		  h3 {
-		    orphans: 3;
-		    widows: 3;
-		  }
-		  h2,
-		  h3 {
-		    page-break-after: avoid;
-		  }
-		  .navbar {
-		    display: none;
-		  }
-		  .btn > .caret,
-		  .dropup > .btn > .caret {
-		    border-top-color: #000 !important;
-		  }
-		  .label {
-		    border: 1px solid #000;
-		  }
-		  .table {
-		    border-collapse: collapse !important;
-		  }
-		  .table td,
-		  .table th {
-		    background-color: #fff !important;
-		  }
-		  .table-bordered th,
-		  .table-bordered td {
-		    border: 1px solid #ddd !important;
-		  }
-		}
-	}
-	
-}}
+& when (#g.config[@normalize] = true) {
+  @import "normalize.preprocessor/normalize";
+}

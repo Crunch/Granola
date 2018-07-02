@@ -1,0 +1,30 @@
+{
+  "name": "granola",
+  "version": "1.0.0",
+  "description": "Granola",
+  "main": "lib/granola.less",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "dependencies": {
+    "normalize.preprocessor": "^8.0.0"
+  },
+  "devDependencies": {
+    "less": "^3.5.0-beta.5"
+  },
+  "scripts": {
+    "build": "lessc lib/granola.less dist/granola.css",
+    "test": "lessc tests/myproject.less tests/myproject.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://matthew-dean@github.com/Crunch/Granola.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Crunch/Granola/issues"
+  },
+  "homepage": "https://github.com/Crunch/Granola#readme"
+}
