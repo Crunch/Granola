@@ -1,0 +1,12 @@
+#g {
+  .grid() {
+    .container() {
+      display: flex;
+    }
+    .col() {
+      @media #g.media.min(small)[] {
+        flex: 1;
+      }
+    }
+  }
+}

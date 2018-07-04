@@ -5,6 +5,27 @@
     @palette: basic;
     @normalize: false;
   }
+  .media() {
+    .sizes() {
+      @small: 600px;
+      @medium: 800px;
+      @large: 1000px;
+      @x-large: 1200px;
+    }
+    .min(@size) {
+      @val: #g.media.sizes[@@size];
+    }
+    .max(@size) {
+
+    }
+    .breakpoint(@size) {
+      @val: #g.media.sizes[@@size];
+      @min: (min-width: @val);
+      @max: not all and @min;
+    }
+  }
+
+
   .layout() {
     //
     @gap: 16px;

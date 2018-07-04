@@ -1,6 +1,6 @@
 #g {
   .prefix-selector(@sel, @rules) {
-    [class^="@{sel}"] [class*=" @{sel}"] {
+    [class^="@{sel}"], [class*=" @{sel}"] {
       @rules();
     }
   }
