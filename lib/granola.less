@@ -1,5 +1,8 @@
 // @import "core/init.less";
-@import "core/_root";
-@import "palette/_root";
-@import "ui/_root";
-@import "selectors/_root";
+& {
+  @plugin "svg";
+  @import "core/_root";
+  @import "palette/_root";
+  @import "ui/_root";
+  @import "selectors/_root";
+}
