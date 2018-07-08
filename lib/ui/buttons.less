@@ -75,8 +75,8 @@
   .button(@variant) {
     @bg: #g.colors[@@variant];
     @light: boolean((luma(@bg) > 50%));
-    @bg-top: saturate(lighten(@bg, #g.colors[@depth]), #g.colors[@depth]);
-    @bg-bottom: darken(@bg, #g.colors[@depth]);
+    @bg-top: saturate(lighten(@bg, #g.shapes[@depth]), #g.shapes[@depth]);
+    @bg-bottom: darken(@bg, #g.shapes[@depth]);
     
     &::after {
       background-image: linear-gradient(to bottom, @bg-top, @bg-bottom);
@@ -84,7 +84,7 @@
     color: if((@light), black, white);
 
     &::before {
-      border-color: saturate(lighten(@bg-top, #g.colors[@depth]), #g.colors[@depth]);
+      border-color: saturate(lighten(@bg-top, #g.shapes[@depth]), #g.shapes[@depth]);
     }
 
     &:hover {
@@ -92,8 +92,8 @@
         saturate(lighten(@bg, #g.colors[@contrast]), #g.colors[@contrast]), 
         lighten(@bg, #g.colors[@contrast])
       );
-      @top: saturate(lighten(@base, #g.colors[@depth]), #g.colors[@depth]);
-      @bottom: saturate(lighten(@bg-bottom, #g.colors[@depth]), #g.colors[@depth]);
+      @top: saturate(lighten(@base, #g.shapes[@depth]), #g.shapes[@depth]);
+      @bottom: saturate(lighten(@bg-bottom, #g.shapes[@depth]), #g.shapes[@depth]);
       
       &::before {
         border-color: @base;
@@ -106,7 +106,7 @@
 
     &:active {
       @base: darken(@bg, (#g.colors[@contrast] / 2));
-      @top: lighten(@base, #g.colors[@depth]);
+      @top: lighten(@base, #g.shapes[@depth]);
       @bottom: @base;
 
       &::before {

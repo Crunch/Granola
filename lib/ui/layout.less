@@ -1,8 +1,32 @@
 #g {
+  .wrapper() {
+    margin: 0 auto;
+    @gap: #g.layout[@gap];
+    padding: 0 @gap;
+    
+    #g.media.min(small, {
+      max-width: #g.media.sizes[@small] - (@gap * 2);
+    });
+    
+    #g.media.min(medium, {
+      max-width: #g.media.sizes[@medium] - (@gap * 2);
+    });
+
+    #g.media.min(large, {
+      max-width: #g.media.sizes[@large] - (@gap * 2);
+    });
+
+    #g.media.min(x-large, {
+      max-width: #g.media.sizes[@x-large] - (@gap * 2);
+    });
+  }
+
+  .wrapper-fluid() {
+    @gap: #g.layout[@gap];
+    padding: 0 @gap;
+  }
+
   .grid() {
-    .container() {
-      display: flex;      
-    }
     .col() {
       @media #g.media.min(small)[] {
         flex: 1;

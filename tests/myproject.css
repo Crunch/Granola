@@ -1,5 +1,198 @@
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+/* https://www.css2less.net/ */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+a {
+  background-color: transparent;
+}
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+b {
+  font-weight: bolder;
+}
+strong {
+  font-weight: bolder;
+}
+code {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+kbd {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+small {
+  font-size: 80%;
+}
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  bottom: -0.25em;
+}
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
+}
+img {
+  border-style: none;
+}
+button {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+}
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+button:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+input {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  overflow: visible;
+}
+optgroup {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+select {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  text-transform: none;
+}
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  overflow: auto;
+}
+[type="button"] {
+  -webkit-appearance: button;
+}
+[type="button"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+[type="button"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+[type="reset"] {
+  -webkit-appearance: button;
+}
+[type="reset"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+[type="reset"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+[type="submit"] {
+  -webkit-appearance: button;
+}
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+progress {
+  vertical-align: baseline;
+}
+[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+[type="number"]::-webkit-inner-spin-button {
+  height: auto;
+}
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+details {
+  display: block;
+}
+summary {
+  display: list-item;
+}
+template {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
 html {
   font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 @media (min-width: 600px) {
   html {
@@ -29,7 +222,7 @@ html {
   bottom: 0;
   right: 0;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 1px;
   z-index: 1;
 }
 .button::after {
@@ -40,7 +233,7 @@ html {
   bottom: 1px;
   right: 1px;
   background-repeat: no-repeat;
-  border-radius: 3px;
+  border-radius: 0px;
   z-index: 1;
 }
 .button.xs {
@@ -63,62 +256,65 @@ html {
   color: white;
 }
 .button.primary::after {
-  background-image: linear-gradient(to bottom, #1c1717, #000000);
+  background-image: linear-gradient(to bottom, #007bff, #007bff);
 }
 .button.primary::before {
-  border-color: #3d2929;
+  border-color: #007bff;
 }
 .button.primary:hover::before {
-  border-color: #1a1a1a;
+  border-color: #248dff;
 }
 .button.primary:hover::after {
-  background-image: linear-gradient(to bottom, #382e2e, #1c1717);
+  background-image: linear-gradient(to bottom, #248dff, #007bff);
 }
 .button.primary:active::before {
-  border-color: #000000;
+  border-color: #0072ed;
 }
 .button.primary:active::after {
-  background-image: linear-gradient(to bottom, #1a1a1a, #000000);
+  background-image: linear-gradient(to bottom, #0072ed, #0072ed);
 }
 .button.secondary {
-  color: black;
-}
-.button.secondary::after {
-  background-image: linear-gradient(to bottom, #11ff11, #00aa00);
-}
-.button.secondary::before {
-  border-color: #44ff44;
-}
-.button.secondary:hover::before {
-  border-color: #11ff11;
-}
-.button.secondary:hover::after {
-  background-image: linear-gradient(to bottom, #44ff44, #00dd00);
-}
-.button.secondary:active::before {
-  border-color: #00c400;
-}
-.button.secondary:active::after {
-  background-image: linear-gradient(to bottom, #00f700, #00c400);
-}
-.button.tertiary {
   color: white;
 }
-.button.tertiary::after {
-  background-image: linear-gradient(to bottom, #1111ff, #0000aa);
+.button.secondary::after {
+  background-image: linear-gradient(to bottom, #6c757d, #6c757d);
 }
-.button.tertiary::before {
-  border-color: #4444ff;
+.button.secondary::before {
+  border-color: #6c757d;
 }
-.button.tertiary:hover::before {
-  border-color: #1111ff;
+.button.secondary:hover::before {
+  border-color: #7e878f;
 }
-.button.tertiary:hover::after {
-  background-image: linear-gradient(to bottom, #4444ff, #0000dd);
+.button.secondary:hover::after {
+  background-image: linear-gradient(to bottom, #7e878f, #6c757d);
 }
-.button.tertiary:active::before {
-  border-color: #0000c4;
+.button.secondary:active::before {
+  border-color: #646c73;
 }
-.button.tertiary:active::after {
-  background-image: linear-gradient(to bottom, #0000f7, #0000c4);
+.button.secondary:active::after {
+  background-image: linear-gradient(to bottom, #646c73, #646c73);
+}
+.wrapper {
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+@media (min-width: 600px) {
+  .wrapper {
+    max-width: 598px;
+  }
+}
+@media (min-width: 800px) {
+  .wrapper {
+    max-width: 798px;
+  }
+}
+@media (min-width: 1000px) {
+  .wrapper {
+    max-width: 998px;
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper {
+    max-width: 1198px;
+  }
 }

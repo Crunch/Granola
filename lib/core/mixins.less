@@ -7,4 +7,27 @@
   .svg-box(@stroke-color; @stroke-width; @background-color;) {
     
   }
+  .media() {
+    .min(@size) {
+      @return: #g.media.breakpoint(@size)[@min];
+    }
+    .min(@size, @rules) {
+      @media #g.media.breakpoint(@size)[@min] {
+        @rules();
+      }
+    }
+    .max(@size) {
+      @return: #g.media.breakpoint(@size)[@max];
+    }
+    .max(@size, @rules) {
+      @media #g.media.breakpoint(@size)[@max] {
+        @rules();
+      }
+    }
+    .breakpoint(@size) {
+      @val: #g.media.sizes[@@size];
+      @min: (min-width: @val);
+      @max: not all and @min;
+    }
+  }
 }
