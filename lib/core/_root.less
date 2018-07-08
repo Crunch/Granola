@@ -1,18 +1,4 @@
 @import "defaults";
 @import "mixins";
 @import "stubs";
-
-#g {
-  .make() when (#g.config[@normalize] = true) {
-    @import "normalize.preprocessor/normalize";
-  }
-  .make() {
-    html {
-      font-size: 16px;
-      font-family: #g.type[@font-family];
-      @media #g.media.min(small)[] {
-        font-size: calc(0.5vw + 13px);
-      }
-    }
-  }
-}
+@import "styles";

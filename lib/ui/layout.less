@@ -1,4 +1,14 @@
 #g {
+  // For content sections
+  .section() {
+    padding: (#g.layout[@gap] * 2) 0;
+  }
+  .section(@variant) {
+    @bg: #g.colors[@@variant];
+    @light: boolean((luma(@bg) > 50%));
+    background-color: @bg;
+    color: if((@light), black, white);
+  }
   .wrapper() {
     margin: 0 auto;
     @gap: #g.layout[@gap];

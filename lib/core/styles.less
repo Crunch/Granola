@@ -1,0 +1,22 @@
+#g {
+  .make() when (#g.config[@reset] = true) {
+    @import (less) "minireset.css/minireset.css";
+    html {
+      font-size: 16px;
+    }
+  }
+  .make() {
+    html {
+      font-family: #g.type[@font-family];
+      
+      #g.media.min(small, {
+        font-size: calc(0.5vw + 0.8125rem);
+      });
+
+      box-sizing: border-box;
+    }
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+  }
+}
