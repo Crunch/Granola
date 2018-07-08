@@ -1,34 +1,73 @@
 #g {
   .button() {
     display: inline-flex;
-    border-width: #g.shapes[@border-width];
-    border-radius: #g.shapes[@border-radius];
-    border-style: solid;
-    border-color: transparent;
+    @border-width: #g.shapes[@border-width];
+    @border-offset: #g.shapes[@border-offset];
+    @border-gap: (@border-width + @border-offset) * 1px;
+
+    border: none;
     text-align: center;
     text-decoration: none;
+    // background-size: calc(100% - (@border-gap * 2)) calc(100% - (@border-gap * 2));
+
     @gap: #g.layout[@gap];
     @ratio: #g.shapes[@inline-box-ratio];
-    @padding-y: (@gap / @ratio);
-    @padding-x: @gap;
-    padding: @padding-y @padding-x;
+    .set-padding(@gap) {
+      @padding-y: (@gap / @ratio);
+      @padding-x: @gap;
+      padding: @padding-y @padding-x;
+    }
+    .set-padding(@gap);
     align-items: center;
     justify-content: center;
     font-size: 1rem;
+    position: relative;
+
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    // border
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      border: @border-width solid transparent;
+      border-radius: (#g.shapes[@border-radius] + @border-gap);
+      z-index: 1;
+    }
+
+    // background
+    &::after {
+      content: '';
+      position: absolute;
+      left: @border-gap;
+      top: @border-gap;
+      bottom: @border-gap;
+      right: @border-gap;
+      background-repeat: no-repeat;
+      border-radius: #g.shapes[@border-radius];
+      z-index: 1;
+    }
+
     &.xs {
-      padding: ((@gap * 0.5) / @ratio) (@padding-x * 0.5); 
+      .set-padding(@gap * 0.5);
       font-size: 0.8rem;
     }
     &.s {
-      padding: ((@gap * 0.75) / @ratio) (@padding-x * 0.75); 
+      .set-padding(@gap * 0.75);
       font-size: 0.875rem;
     }
     &.l {
-      padding: ((@gap * 1.25) / @ratio) (@padding-x * 1.25); 
+      .set-padding(@gap * 1.25);
       font-size: 1.25rem;
     }
     &.xl {
-      padding: ((@gap * 1.5) / @ratio) (@padding-x * 1.5); 
+      .set-padding(@gap * 1.5);
       font-size: 1.5rem;
     }
   }
@@ -38,8 +77,15 @@
     @light: boolean((luma(@bg) > 50%));
     @bg-top: saturate(lighten(@bg, #g.colors[@depth], relative), #g.colors[@depth]);
     @bg-bottom: darken(@bg, #g.colors[@depth], relative);
-    background-image: linear-gradient(to bottom, @bg-top, @bg-bottom);
+    
+    &::after {
+      background-image: linear-gradient(to bottom, @bg-top, @bg-bottom);
+    }
     color: if((@light), black, white);
+
+    &::before {
+      border-color: saturate(lighten(@bg-top, #g.colors[@depth], relative), #g.colors[@depth]);
+    }
 
     &:hover {
       @base: if((@light), 
@@ -48,14 +94,28 @@
       );
       @top: saturate(lighten(@base, #g.colors[@depth], relative), #g.colors[@depth]);
       @bottom: saturate(lighten(@bg-bottom, #g.colors[@depth], relative), #g.colors[@depth]);
-      background-image: linear-gradient(to bottom, @top, @bottom);
+      
+      &::before {
+        border-color: @base;
+      }
+
+      &::after {
+        background-image: linear-gradient(to bottom, @top, @bottom);
+      }
     }
 
     &:active {
       @base: darken(@bg, (#g.colors[@contrast] / 2), relative);
       @top: lighten(@base, #g.colors[@depth], relative);
       @bottom: @base;
-      background-image: linear-gradient(to bottom, @top, @bottom);
+
+      &::before {
+        border-color: @base;
+      }
+
+      &::after {
+        background-image: linear-gradient(to bottom, @top, @bottom);
+      }
     }
   }
 }
