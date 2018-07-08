@@ -75,8 +75,8 @@
   .button(@variant) {
     @bg: #g.colors[@@variant];
     @light: boolean((luma(@bg) > 50%));
-    @bg-top: saturate(lighten(@bg, #g.colors[@depth], relative), #g.colors[@depth]);
-    @bg-bottom: darken(@bg, #g.colors[@depth], relative);
+    @bg-top: saturate(lighten(@bg, #g.colors[@depth]), #g.colors[@depth]);
+    @bg-bottom: darken(@bg, #g.colors[@depth]);
     
     &::after {
       background-image: linear-gradient(to bottom, @bg-top, @bg-bottom);
@@ -84,16 +84,16 @@
     color: if((@light), black, white);
 
     &::before {
-      border-color: saturate(lighten(@bg-top, #g.colors[@depth], relative), #g.colors[@depth]);
+      border-color: saturate(lighten(@bg-top, #g.colors[@depth]), #g.colors[@depth]);
     }
 
     &:hover {
       @base: if((@light), 
-        saturate(lighten(@bg, #g.colors[@contrast], relative), #g.colors[@contrast]), 
-        lighten(@bg, #g.colors[@contrast], relative)
+        saturate(lighten(@bg, #g.colors[@contrast]), #g.colors[@contrast]), 
+        lighten(@bg, #g.colors[@contrast])
       );
-      @top: saturate(lighten(@base, #g.colors[@depth], relative), #g.colors[@depth]);
-      @bottom: saturate(lighten(@bg-bottom, #g.colors[@depth], relative), #g.colors[@depth]);
+      @top: saturate(lighten(@base, #g.colors[@depth]), #g.colors[@depth]);
+      @bottom: saturate(lighten(@bg-bottom, #g.colors[@depth]), #g.colors[@depth]);
       
       &::before {
         border-color: @base;
@@ -105,8 +105,8 @@
     }
 
     &:active {
-      @base: darken(@bg, (#g.colors[@contrast] / 2), relative);
-      @top: lighten(@base, #g.colors[@depth], relative);
+      @base: darken(@bg, (#g.colors[@contrast] / 2));
+      @top: lighten(@base, #g.colors[@depth]);
       @bottom: @base;
 
       &::before {

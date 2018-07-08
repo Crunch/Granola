@@ -1,5 +1,7 @@
 @granola: "../lib";
 @import "@{granola}/granola";
+@import "@{granola}/theme/basic";
+@import "@{granola}/selectors/default";
 //@import "@{granola}/elements/default";
 //@import "@{granola}/ui/base";
 
@@ -7,8 +9,12 @@
   .config() {
     @normalize: false;
   }
+  .colors() {
+    @primary: black;
+  }
 }
 
+#g.make();
 
 // Below: you don't have to output elements, 
 // you can just use Granola mixins to sprinkle styles throughout your project.

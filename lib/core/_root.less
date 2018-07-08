@@ -2,9 +2,16 @@
 @import "mixins";
 @import "stubs";
 
-html {
-  font-size: 16px;
-  @media #g.media.min(small)[] {
-    font-size: calc(0.5vw + 13px);
+#g {
+  .make() when (#g.config[@normalize] = true) {
+    @import "normalize.preprocessor/normalize";
+  }
+  .make() {
+    html {
+      font-size: 16px;
+      @media #g.media.min(small)[] {
+        font-size: calc(0.5vw + 13px);
+      }
+    }
   }
 }
