@@ -2,7 +2,7 @@
   .config() {
     @ui: default;
     @selectors: default;
-    @palette: basic;
+    @theme: basic;
     @normalize: false;
   }
   .media() {
@@ -37,8 +37,4 @@
     //
     @gap: 1rem;
   }
-}
-
-& when (#g.config[@normalize] = true) {
-  @import "normalize.preprocessor/normalize";
 }

@@ -2,7 +2,8 @@
 & {
   @plugin "svg";
   @import "core/_root";
-  @import "palette/_root";
   @import "ui/_root";
-  @import "selectors/_root";
+  .make() when (#g.config[@normalize] = true) {
+    @import "normalize.preprocessor/normalize";
+  }
 }

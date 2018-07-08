@@ -1,13 +1,18 @@
 @granola: "../lib";
 @import "@{granola}/granola";
-//@import "@{granola}/elements/default";
-//@import "@{granola}/ui/base";
+@import "@{granola}/selectors/default";
+@import "@{granola}/theme/basic";
 
 #g {
   .config() {
     @normalize: false;
   }
+  .colors() {
+    @primary: black;
+  }
 }
+
+#g.make();
 
 
 // Below: you don't have to output elements, 
