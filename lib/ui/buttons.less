@@ -1,43 +1,100 @@
 #g {
   .button() {
     display: inline-flex;
-    // border-width: (1px * #g.borders[@size]);
-    // border-style: solid;
+    border-width: #g.shapes[@border-width];
+    border-radius: #g.shapes[@border-radius];
+    border-style: solid;
+    border-color: transparent;
     text-align: center;
     text-decoration: none;
-    padding: #g.layout[@gap];
-
-    @svg: {
-      defs {
-        linearGradient {
-          id: linear; x1: 0%; x2: 100%; y1: 0%; y2: 0%;
-          stop {
-            offset: 0%;
-            stop-color: #05a;
-            stop-opacity: 1.0;
-          }
-          stop {
-            offset: 100%;
-            stop-color: #0a5;
-            stop-opacity: 1.0;
-          }
-        } 
-      }
-      rect {
-        x: 0; y: 0; rx: 5px; ry: 5px; width: 100%; height: 100%;
-        style {
-          width: calc(100% - 2px);
-          height: calc(100% - 2px);
-          transform: translateX(1px) translateY(1px);
-        }
-        fill: transparent;
-        stroke: url(#linear);
-        stroke-width: 2px;
-      }
-    };
-    background-image: svg(@svg);
+    @gap: #g.layout[@gap];
+    @ratio: #g.shapes[@inline-box-ratio];
+    @padding-y: (@gap / @ratio);
+    @padding-x: @gap;
+    padding: @padding-y @padding-x;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    &.xs {
+      padding: ((@gap * 0.5) / @ratio) (@padding-x * 0.5); 
+      font-size: 0.8rem;
+    }
+    &.s {
+      padding: ((@gap * 0.75) / @ratio) (@padding-x * 0.75); 
+      font-size: 0.875rem;
+    }
+    &.l {
+      padding: ((@gap * 1.25) / @ratio) (@padding-x * 1.25); 
+      font-size: 1.25rem;
+    }
+    &.xl {
+      padding: ((@gap * 1.5) / @ratio) (@padding-x * 1.5); 
+      font-size: 1.5rem;
+    }
   }
+
   .button(@variant) {
-    // border-color: #g.colors[@@variant];
+    @bg: #g.colors[@@variant];
+    @light: boolean((luma(@bg) > 50%));
+    @bg-top: saturate(lighten(@bg, #g.colors[@depth], relative), #g.colors[@depth]);
+    @bg-bottom: darken(@bg, #g.colors[@depth], relative);
+    background-image: linear-gradient(to bottom, @bg-top, @bg-bottom);
+    color: if((@light), black, white);
+
+    &:hover {
+      @base: if((@light), 
+        saturate(lighten(@bg, #g.colors[@contrast], relative), #g.colors[@contrast]), 
+        lighten(@bg, #g.colors[@contrast], relative)
+      );
+      @top: saturate(lighten(@base, #g.colors[@depth], relative), #g.colors[@depth]);
+      @bottom: saturate(lighten(@bg-bottom, #g.colors[@depth], relative), #g.colors[@depth]);
+      background-image: linear-gradient(to bottom, @top, @bottom);
+    }
+
+    &:active {
+      @base: darken(@bg, (#g.colors[@contrast] / 2), relative);
+      @top: lighten(@base, #g.colors[@depth], relative);
+      @bottom: @base;
+      background-image: linear-gradient(to bottom, @top, @bottom);
+    }
   }
 }
+
+// @svg: {
+//   defs {
+//     linearGradient {
+//       id: linear; x1: 0%; x2: 100%; y1: 0%; y2: 100%;
+//       stop {
+//         offset: 0%;
+//         stop-color: #0a5;
+//         stop-opacity: 1.0;
+//       }
+//       stop {
+//         offset: 100%;
+//         stop-color: #05a;
+//         stop-opacity: 1.0;
+//       }
+//     } 
+//   }
+
+//   svg {
+//     x: 0; y: 0; width: 100%; height: 100%; viewBox: 0 0 100 100; 
+//     style {
+//       width: calc(100% - 10px);
+//       height: calc(100% - 10px);
+//     }
+//     preserveAspectRatio: none;
+//     path {
+//       d: ~'M0,0 h100 a10,10 0 0 1 10,10 v100 a10,10 0 0 1 -10,10 h-100 a10,10 0 0 1 -10,-10 v-100 a10,10 0 0 1 10,-10 z';
+//       style {
+//         // width: calc(100% - 2px);
+//         // height: calc(100% - 2px);
+//         // transform: translateX(1px) translateY(1px);
+//       }
+//       fill: none;
+//       stroke: url(#linear);
+//       stroke-width: 2px;
+//     }
+//   }
+// };
+// background-image: svg(@svg);

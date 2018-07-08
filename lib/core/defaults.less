@@ -13,10 +13,10 @@
       @x-large: 1200px;
     }
     .min(@size) {
-      @val: #g.media.sizes[@@size];
+      @return: #g.media.breakpoint(@size)[@min];
     }
     .max(@size) {
-
+      @return: #g.media.breakpoint(@size)[@max];
     }
     .breakpoint(@size) {
       @val: #g.media.sizes[@@size];
@@ -24,21 +24,18 @@
       @max: not all and @min;
     }
   }
-
+  .shapes() {
+    @border-radius: 5px;
+    @border-width: 1px;
+    // how much to offset border from background color
+    @border-offset: 0;
+    // target width to height ratio for inline boxes
+    @inline-box-ratio: (16/9);
+  }
 
   .layout() {
     //
-    @gap: 16px;
-  }
-  .borders() {
-    // multiplier of border-width
-    @size: 1; 
-    // how much to offset border from background color
-    @offset: 0;
-  }
-  .box() {
-    // target width to height ratio for inline boxes
-    @inline-ratio: (16 / 9);
+    @gap: 1rem;
   }
 }
 
